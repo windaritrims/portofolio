@@ -1,24 +1,30 @@
-export { };
+// app/global.d.ts
 
-declare module '*.glb';
-declare module '*.png';
+// Jangan pakai `export { };` jika tidak ada ekspor, atau ubah jadi:
+export {}; // Untuk menjadikan ini file modul
+
+declare module '*.glb' {
+  const src: string;
+  export default src;
+}
+
+declare module '*.png' {
+  const src: string;
+  export default src;
+}
 
 declare module 'meshline' {
-  export const MeshLineGeometry: any;
-  export const MeshLineMaterial: any;
+  import { BufferGeometry, Material } from 'three';
+
+  export class MeshLineGeometry extends BufferGeometry {}
+  export class MeshLineMaterial extends Material {}
 }
 
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      meshLineGeometry: any;
-      meshLineMaterial: any;
+      meshLineGeometry: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+      meshLineMaterial: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
     }
   }
 }
-
-- src/vite-env.d.ts
-/// <reference types="vite/client" />
-declare module '*.glb';
-declare module '*.png';
-*/
