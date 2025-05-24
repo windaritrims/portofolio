@@ -15,7 +15,7 @@
     "moduleResolution": "node", // Ganti dari 'bundler' ke 'node' supaya resolver lebih kompatibel
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve", // Ganti dari 'preserve' ke 'react-jsx' supaya NextJS dan TS lebih kompatibel
+    "jsx": "react-jsx", // Ganti dari 'preserve' ke 'react-jsx' supaya NextJS dan TS lebih kompatibel
     "incremental": true,
     "plugins": [
       {
@@ -28,12 +28,12 @@
       ]
     }
   },
-  "include": [
-    "app/**/*",
-    "global.d.ts", // Pastikan file ini ada di root project
-    "next-env.d.ts",
-    ".next/types/**/*.ts"
-  ],
+"include": [
+  "app/**/*",
+  "global.d.ts",
+  "next-env.d.ts",
+  ".next/types/**/*.ts"
+],
   "exclude": [
     "node_modules"
   ]
