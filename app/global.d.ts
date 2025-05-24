@@ -1,7 +1,4 @@
-// app/global.d.ts
-
-// Jangan pakai `export { };` jika tidak ada ekspor, atau ubah jadi:
-export {}; // Untuk menjadikan ini file modul
+export {};
 
 declare module '*.glb' {
   const src: string;
@@ -23,8 +20,8 @@ declare module 'meshline' {
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      meshLineGeometry: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
-      meshLineMaterial: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+      meshLineGeometry: any;
+      meshLineMaterial: any;
     }
   }
 }
