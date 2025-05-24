@@ -1,6 +1,6 @@
 
 export default function Home() {
   return (
- <h1>winda</h1>
+ <h1>windaritrims</h1>
   );
 }
